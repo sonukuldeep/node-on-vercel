@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 // Serve static files from a public folder
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/api/run', routes)
+app.use('/', routes)
 /*
 // Routes
 
