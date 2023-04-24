@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // Set the view engine to EJS
-app.set('view engine', 'ejs')
+//app.set('view engine', 'ejs')
 
 // Serve static files from a public folder
 app.use(express.static('public'))
 
-app.use('/api/text', routes)
+app.use('/api/run', routes)
 /*
 // Routes
 
@@ -51,3 +51,4 @@ if(process.env.PORT) {
     module.exports = app;
 }
 */
+app.listen()
