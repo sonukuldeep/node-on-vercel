@@ -46,3 +46,11 @@ window.addEventListener(
     },
     false
 );
+
+
+
+const hamburger = document.querySelector(".hamburger .svg");
+const pagesBlock = document.querySelector(".pages");
+hamburger?.addEventListener("click", () => {
+  pagesBlock?.classList.toggle("active");
+});

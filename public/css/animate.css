@@ -175,3 +175,38 @@
 
   }
 }
+
+/* hamburger menu */
+.hamburger {
+  width: 100%;
+  position: static;
+}
+
+.pages {
+  top: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  left: 0;
+  display: none;
+  transition: transform 200ms ease-in;
+  position: absolute;
+}
+
+.pages.active {
+  transform: translateX(0);
+}
+.hero-slider-content .fix-heading {
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .pages {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .root {
+    display: none;
+  }
+}

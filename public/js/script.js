@@ -32,3 +32,8 @@ window.addEventListener("scroll", function () {
     cards[13] && animateFunction(cards[13], AnimateProperty.ease, 1, 9);
     animateFunction(scrollCard, AnimateProperty.scroll, 0.5);
 }, false);
+var hamburger = document.querySelector(".hamburger .svg");
+var pagesBlock = document.querySelector(".pages");
+hamburger === null || hamburger === void 0 ? void 0 : hamburger.addEventListener("click", function () {
+    pagesBlock === null || pagesBlock === void 0 ? void 0 : pagesBlock.classList.toggle("active");
+});
