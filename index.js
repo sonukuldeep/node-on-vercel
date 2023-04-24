@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', routes)
 
 // if port exist then run else deploy on vercel
-if(process.env.PORT) {   
+if (process.env.PORT) {
     // Start the server
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on port ${process.env.PORT}`)
     })
-}
-//app.listen()
+} else
+    app.listen()
