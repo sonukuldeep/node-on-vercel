@@ -14,7 +14,7 @@ router.get("/test", function (req, res) {
 
 router.get("/", function (req, res) {
     // res.status(200).render("home",)
-    res.sendFile('../public/helloworld.html')
+    res.sendFile('./helloworld.html')
 })
 
 router.get("/about", function (req, res) {
