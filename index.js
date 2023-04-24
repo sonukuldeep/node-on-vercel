@@ -4,7 +4,8 @@ const express = require("express")
 const app = express()
 const routes = require('./app/routes')
 var path = require('path')
-
+const cors = require('cors')
+app.use(cors())
 //Routes
 //const apiRoutes = require('./routes/apiRoutes')
 
