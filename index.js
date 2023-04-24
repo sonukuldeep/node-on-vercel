@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require("express")
 const app = express()
 const routes = require('./app/routes')
+var http = require('http')
+var path = require('path')
 
 //Routes
 //const apiRoutes = require('./routes/apiRoutes')
@@ -10,13 +12,13 @@ const routes = require('./app/routes')
 //Middleware
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
+app.use(app.router)
 // Set the view engine to EJS
-app.set('views', '/views')
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // Serve static files from a public folder
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api/run', routes)
 /*
