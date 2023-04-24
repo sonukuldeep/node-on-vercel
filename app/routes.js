@@ -6,7 +6,7 @@ const router = express.Router()
 router.use(express.urlencoded({ extended: false }))
 router.use(express.json())
 
-router.set('view engine', 'ejs')
+//router.set('view engine', 'ejs')
 
 router.get("/test", function (req, res) {
     res.status(200).send("works")
