@@ -2,24 +2,13 @@
 const express = require("express")
 const router = express.Router()
 
-//Middleware
-router.use(express.urlencoded({ extended: false }))
-router.use(express.json())
-
-//router.set('view engine', 'ejs')
-
+// Define user routes
 router.get("/test", function (req, res) {
     res.status(200).send("works")
 })
 
 router.get("/", function (req, res) {
     res.status(200).render("home",)
-    // console.log(__dirname)
-    // res.sendFile('helloworld.html')
-})
-
-router.get("/css/styles.css", function (req, res) {
-    res.status(200).sendFile('css/styles.css')
 })
 
 router.get("/about", function (req, res) {
