@@ -13,7 +13,8 @@ router.get("/test", function (req, res) {
 })
 
 router.get("/", function (req, res) {
-    res.status(200).render("home",)
+    // res.status(200).render("home",)
+    res.sendFile('/helloworld.html')
 })
 
 router.get("/about", function (req, res) {
