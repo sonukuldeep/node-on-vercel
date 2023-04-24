@@ -15,6 +15,21 @@
   }
 }
 
+.animate-on-load.OnlyfadeIn {
+  animation: onlyfadeIn 800ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes onlyfadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .animate-on-load.blur {
   animation: blur 500ms ease-in;
   animation-fill-mode: forwards;
