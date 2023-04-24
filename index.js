@@ -4,10 +4,6 @@ const express = require("express")
 const app = express()
 const routes = require('./app/routes')
 var path = require('path')
-const cors = require('cors')
-app.use(cors())
-
-//const apiRoutes = require('./routes/apiRoutes')
 
 //Middleware
 app.use(express.urlencoded({ extended: false }))

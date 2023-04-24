@@ -24,4 +24,5 @@ router.post("/", function (req, res) {
     res.status(200).send("The sum of these numbers is " + num1 + num2)
 })
 
+// Export the router
 module.exports = router;
