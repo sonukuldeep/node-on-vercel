@@ -2,9 +2,10 @@
 require('dotenv').config()
 const express = require("express")
 const app = express()
+const routes = require('./app/routes')
 
 //Routes
-const apiRoutes = require('./routes/apiRoutes')
+//const apiRoutes = require('./routes/apiRoutes')
 
 //Middleware
 app.use(express.urlencoded({ extended: false }))
@@ -16,6 +17,8 @@ app.set('view engine', 'ejs')
 // Serve static files from a public folder
 app.use(express.static('public'))
 
+app.use('/api/text', routes)
+/*
 // Routes
 
 // Register userRoutes middleware
@@ -47,3 +50,4 @@ if(process.env.PORT) {
 } else {
     module.exports = app;
 }
+*/
