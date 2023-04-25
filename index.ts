@@ -2,7 +2,7 @@
 require('dotenv').config()
 const express = require("express")
 const app = express()
-const routes = require('./app/routes')
+const fitness = require('./app/fitness')
 var path = require('path')
 
 //Middleware
@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
-app.use('/', routes)
+app.use('/', fitness)
 
 // if port exist then run else deploy on vercel
 if (process.env.PORT) {
