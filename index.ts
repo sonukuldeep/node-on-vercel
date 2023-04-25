@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
-app.use('/', fitness)
+app.use('/fitness', fitness)
 
 // if port exist then run else deploy on vercel
 if (process.env.PORT) {
