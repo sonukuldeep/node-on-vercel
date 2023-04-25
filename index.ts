@@ -17,7 +17,7 @@ const contactSchema = require('./validation/contactFormValidation')
 
 // Creating a limiter by calling rateLimit function with options
 const limiter = rateLimit({
-    max: 30,
+    max: 200,
     windowMs: 60 * 60 * 1000,
     message: "Too many request from this IP"
 })
