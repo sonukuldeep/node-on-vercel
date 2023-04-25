@@ -3,16 +3,11 @@ const cards = document.querySelectorAll(".animate-on-scroll");
 const scrollCard = document.querySelector(".animate-on-scroll.scroll-1");
 const windowHeight = window.innerHeight // gets viewport height
 
+// helps define what values are permitted in animatedFunction below
 enum AnimateProperty {
     scale = '--scale',
     ease = '--easeIn',
     scroll = '--scroll'
-}
-type AnimateFunctionProps = {
-    element: NodeListOf<Element>;
-    property: AnimateProperty;
-    delay: number;
-    propertyVariable: string;
 }
 
 function animateFunction(element: Element, property: AnimateProperty, delay = 1, propertyVariable: number | string = "") {
@@ -25,6 +20,7 @@ function animateFunction(element: Element, property: AnimateProperty, delay = 1,
     }
 }
 
+// make heavy lifting function
 window.addEventListener(
     "scroll",
     () => {
@@ -44,20 +40,26 @@ window.addEventListener(
         animateFunction(scrollCard!, AnimateProperty.scroll, 0.5)
 
     },
-    false
-);
+)
 
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+// navbar dropdown in mobile devices
 const hamburger = document.querySelector(".hamburger .svg");
 const pagesBlock = document.querySelector(".pages");
+// adding event listner to hamburger icon
 hamburger?.addEventListener("click", () => {
     pagesBlock?.classList.toggle("active");
 });
 
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+
+// hero section carousel
+// grabbing carousel blocks
 const slider = document.querySelectorAll('.w-slider-mask .w-slide')
 
+// get active block
 function getActiveSlide(): number {
     let activeSlide = 0
     slider.forEach((slide, index) => {
@@ -67,9 +69,12 @@ function getActiveSlide(): number {
     })
     return activeSlide
 }
+
 enum SlideDirection {
     RIGHT, LEFT
 }
+
+// heavy lifing function that toggles active class btw the 3 block
 function slideFunction(slide: SlideDirection) {
     const activeSlide = getActiveSlide()
     slider[activeSlide].classList.toggle('active')
@@ -92,6 +97,7 @@ function slideFunction(slide: SlideDirection) {
 
 }
 
+// arrow btn that trigger the animation
 const rightArrow = document.querySelector('.right-arrow .arrow-nav')
 const leftArrow = document.querySelector('.left-arrow .arrow-nav')
 

@@ -1,4 +1,4 @@
-/* hero */
+/* animation type 1 */
 .animate-on-load.fadeIn {
   animation: fadeIn 500ms ease-in;
   animation-fill-mode: forwards;
@@ -15,6 +15,7 @@
   }
 }
 
+/* animation type 2 */
 .animate-on-load.OnlyfadeIn {
   animation: onlyfadeIn 800ms ease-in;
   animation-fill-mode: forwards;
@@ -30,6 +31,7 @@
   }
 }
 
+/* animation type 3 */
 .animate-on-load.blur {
   animation: blur 500ms ease-in;
   animation-fill-mode: forwards;
@@ -42,7 +44,7 @@
   }
 }
 
-/* ease */
+/* animation type 4 */
 .animate-on-scroll.easeIn,
 .animate-on-scroll.easeIn1,
 .animate-on-scroll.easeIn2,
@@ -114,7 +116,7 @@
   }
 }
 
-/* ease end */
+/* animation type 5 */
 .animate-on-scroll.scroll-1 {
 
   animation: rotate 1s linear infinite;
@@ -147,6 +149,7 @@
   }
 }
 
+/* animation type 6 */
 .animate-on-scroll.scale {
 
   animation: scale 1s linear infinite;
@@ -175,6 +178,8 @@
 
   }
 }
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
 /* hamburger menu */
 .hamburger {
@@ -211,6 +216,8 @@
   }
 }
 
+/* XXXXXXXXXXXXXXXXXXXXX */
+/* hero section animation */
 .w-slider-mask .w-slide {
   display: none;
 }

@@ -1,7 +1,7 @@
-// getting cards to listen to
+"use strict";
 var cards = document.querySelectorAll(".animate-on-scroll");
 var scrollCard = document.querySelector(".animate-on-scroll.scroll-1");
-var windowHeight = window.innerHeight; // gets viewport height
+var windowHeight = window.innerHeight;
 var AnimateProperty;
 (function (AnimateProperty) {
     AnimateProperty["scale"] = "--scale";
@@ -11,30 +11,28 @@ var AnimateProperty;
 function animateFunction(element, property, delay, propertyVariable) {
     if (delay === void 0) { delay = 1; }
     if (propertyVariable === void 0) { propertyVariable = ""; }
-    var top = element.getBoundingClientRect().top; // gets element top relative to view port
-    var topFactor = delay; // lower value to delay animation and vice versa
-    var range = topFactor * windowHeight - top; // if window - top is + then object is in view 
-    var step = range / windowHeight; // responsible for a steady increment/decrement from 0-1 during scroll. nothing else 
-    if (range > 0 && range <= windowHeight) { // animate only when object is in view and in limit 
-        document.body.style.setProperty("".concat(property).concat(propertyVariable), step.toString()); //sets css variable that can be used for animation
+    var top = element.getBoundingClientRect().top;
+    var topFactor = delay;
+    var range = topFactor * windowHeight - top;
+    var step = range / windowHeight;
+    if (range > 0 && range <= windowHeight) {
+        document.body.style.setProperty("".concat(property).concat(propertyVariable), step.toString());
     }
 }
 window.addEventListener("scroll", function () {
     cards[0] && animateFunction(cards[0], AnimateProperty.ease, 1);
     cards[1] && animateFunction(cards[1], AnimateProperty.ease, 1, 1);
-    // animateFunction(cards[2], AnimateProperty.ease, 1, 1) // uses the same property as cards[1]
     cards[3] && animateFunction(cards[3], AnimateProperty.ease, 1, 2);
     cards[4] && animateFunction(cards[4], AnimateProperty.ease, 1, 3);
     cards[5] && animateFunction(cards[5], AnimateProperty.ease, 1, 4);
     cards[6] && animateFunction(cards[6], AnimateProperty.ease, 1, 5);
-    // animateFunction(cards[7], AnimateProperty.ease, 1,)
     cards[9] && animateFunction(cards[9], AnimateProperty.ease, 1, 6);
     cards[10] && animateFunction(cards[10], AnimateProperty.scale, 0.7);
     cards[11] && animateFunction(cards[11], AnimateProperty.ease, 1, 7);
     cards[12] && animateFunction(cards[12], AnimateProperty.ease, 1, 8);
     cards[13] && animateFunction(cards[13], AnimateProperty.ease, 1, 9);
     animateFunction(scrollCard, AnimateProperty.scroll, 0.5);
-}, false);
+});
 var hamburger = document.querySelector(".hamburger .svg");
 var pagesBlock = document.querySelector(".pages");
 hamburger === null || hamburger === void 0 ? void 0 : hamburger.addEventListener("click", function () {
