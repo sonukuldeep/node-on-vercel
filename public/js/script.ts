@@ -37,7 +37,7 @@ window.addEventListener(
         cards[11] && animateFunction(cards[11], AnimateProperty.ease, 1, 7)
         cards[12] && animateFunction(cards[12], AnimateProperty.ease, 1, 8)
         cards[13] && animateFunction(cards[13], AnimateProperty.ease, 1, 9)
-        animateFunction(scrollCard!, AnimateProperty.scroll, 0.5)
+        scrollCard && animateFunction(scrollCard, AnimateProperty.scroll, 0.5)
 
     },
 )

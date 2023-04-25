@@ -1,4 +1,3 @@
-"use strict";
 var cards = document.querySelectorAll(".animate-on-scroll");
 var scrollCard = document.querySelector(".animate-on-scroll.scroll-1");
 var windowHeight = window.innerHeight;
@@ -31,7 +30,7 @@ window.addEventListener("scroll", function () {
     cards[11] && animateFunction(cards[11], AnimateProperty.ease, 1, 7);
     cards[12] && animateFunction(cards[12], AnimateProperty.ease, 1, 8);
     cards[13] && animateFunction(cards[13], AnimateProperty.ease, 1, 9);
-    animateFunction(scrollCard, AnimateProperty.scroll, 0.5);
+    scrollCard && animateFunction(scrollCard, AnimateProperty.scroll, 0.5);
 });
 var hamburger = document.querySelector(".hamburger .svg");
 var pagesBlock = document.querySelector(".pages");
