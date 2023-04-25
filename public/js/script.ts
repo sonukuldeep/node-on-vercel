@@ -52,5 +52,48 @@ window.addEventListener(
 const hamburger = document.querySelector(".hamburger .svg");
 const pagesBlock = document.querySelector(".pages");
 hamburger?.addEventListener("click", () => {
-  pagesBlock?.classList.toggle("active");
+    pagesBlock?.classList.toggle("active");
 });
+
+
+const slider = document.querySelectorAll('.w-slider-mask .w-slide')
+
+function getActiveSlide(): number {
+    let activeSlide = 0
+    slider.forEach((slide, index) => {
+        if (slide.classList.contains('active')) {
+            activeSlide = index
+        }
+    })
+    return activeSlide
+}
+enum SlideDirection {
+    RIGHT, LEFT
+}
+function slideFunction(slide: SlideDirection) {
+    const activeSlide = getActiveSlide()
+    slider[activeSlide].classList.toggle('active')
+    if (slide === SlideDirection.RIGHT) {
+        if (activeSlide === 2) {
+            slider[activeSlide - 2].classList.toggle('active')
+        }
+        else {
+            slider[activeSlide + 1].classList.toggle('active')
+        }
+    }
+    else if (slide === SlideDirection.LEFT) {
+        if (activeSlide === 0) {
+
+            slider[activeSlide + 2].classList.toggle('active')
+        } else {
+            slider[activeSlide - 1].classList.toggle('active')
+        }
+    }
+
+}
+
+const rightArrow = document.querySelector('.right-arrow .arrow-nav')
+const leftArrow = document.querySelector('.left-arrow .arrow-nav')
+
+rightArrow?.addEventListener('click', () => slideFunction(SlideDirection.RIGHT))
+leftArrow?.addEventListener('click', () => slideFunction(SlideDirection.LEFT))

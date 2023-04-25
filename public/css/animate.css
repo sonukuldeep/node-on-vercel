@@ -210,3 +210,11 @@
     display: none;
   }
 }
+
+.w-slider-mask .w-slide {
+  display: none;
+}
+
+.w-slider-mask .w-slide.active {
+  display: block;
+}
