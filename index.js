@@ -2,7 +2,7 @@
 require('dotenv').config();
 var express = require("express");
 var app = express();
-var fitness = require('./app/firness.js');
+var fitness = require('./app/firness');
 var path = require('path');
 //Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 // Serve static files from a public folder
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
-app.use('/fitness', fitness);
+app.use('/', fitness);
 // if port exist then run else deploy on vercel
 if (process.env.PORT) {
     // Start the server
