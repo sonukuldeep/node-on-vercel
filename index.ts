@@ -6,8 +6,11 @@ const express = require("express")
 const app = express()
 const path = require('path')
 const rateLimit = require("express-rate-limit")
+
 //fitness route
-const fitness = require('./app/firness')
+const fitness = require('./app/fitness')
+const noize = require('./app/noize')
+
 // database
 const { createEntry } = require('./lib/prisma')
 
@@ -17,7 +20,7 @@ const contactSchema = require('./validation/contactFormValidation')
 
 // Creating a limiter by calling rateLimit function with options
 const limiter = rateLimit({
-    max: 200,
+    max: 500,
     windowMs: 60 * 60 * 1000,
     message: "Too many request from this IP"
 })
@@ -37,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', fitness)
+app.use('/noize', noize)
 
 app.post('/createNewContact', validate(contactSchema), async (req: Request, res: Response) => {
     const { name,

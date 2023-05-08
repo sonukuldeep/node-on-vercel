@@ -36,37 +36,50 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//Imports
 require('dotenv').config();
 var express = require("express");
 var app = express();
 var path = require('path');
 var rateLimit = require("express-rate-limit");
-var fitness = require('./app/firness');
+//fitness route
+var fitness = require('./app/fitness');
+var noize = require('./app/noize');
+// database
 var createEntry = require('./lib/prisma').createEntry;
+// use Input validation
 var validate = require('./validation/validationMiddlewere');
 var contactSchema = require('./validation/contactFormValidation');
+// Creating a limiter by calling rateLimit function with options
 var limiter = rateLimit({
-    max: 200,
+    max: 500,
     windowMs: 60 * 60 * 1000,
     message: "Too many request from this IP"
 });
+//Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(limiter);
+// Set the view engine to EJS
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// Serve static files from a public folder
 app.use(express.static(path.join(__dirname, 'public')));
+// Routes
 app.use('/', fitness);
+app.use('/noize', noize);
 app.post('/createNewContact', validate(contactSchema), function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name, currentWeight, goalWeight, email, describeYourGoals;
     return __generator(this, function (_b) {
         _a = req.body, name = _a.name, currentWeight = _a.currentWeight, goalWeight = _a.goalWeight, email = _a.email, describeYourGoals = _a.describeYourGoals;
         createEntry(name, currentWeight, goalWeight, email, describeYourGoals);
         res.status(200).json("ok");
-        return [2];
+        return [2 /*return*/];
     });
 }); });
+// if port exist then run else deploy on vercel
 if (process.env.PORT) {
+    // Start the server
     app.listen(process.env.PORT, function () {
         console.log("Server is running on port ".concat(process.env.PORT));
     });
