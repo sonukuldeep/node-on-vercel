@@ -1,13 +1,13 @@
 //Imports
 require('dotenv').config()
 import { Request, Response } from 'express';
-
 const express = require("express")
 const app = express()
 const path = require('path')
 const rateLimit = require("express-rate-limit")
 
 //fitness route
+const home = require('./app/home')
 const fitness = require('./app/fitness')
 const noize = require('./app/noize')
 
@@ -39,7 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 // Routes
-app.use('/', fitness)
+app.use('/', home)
+app.use('/fitness', fitness)
 app.use('/noize', noize)
 
 app.post('/createNewContact', validate(contactSchema), async (req: Request, res: Response) => {

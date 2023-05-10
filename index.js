@@ -43,6 +43,7 @@ var app = express();
 var path = require('path');
 var rateLimit = require("express-rate-limit");
 //fitness route
+var home = require('./app/home');
 var fitness = require('./app/fitness');
 var noize = require('./app/noize');
 // database
@@ -66,7 +67,8 @@ app.set('view engine', 'ejs');
 // Serve static files from a public folder
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
-app.use('/', fitness);
+app.use('/', home);
+app.use('/fitness', fitness);
 app.use('/noize', noize);
 app.post('/createNewContact', validate(contactSchema), function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name, currentWeight, goalWeight, email, describeYourGoals;

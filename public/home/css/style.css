@@ -1,0 +1,99 @@
+:root {
+    --bg-color: rgb(20, 20, 20);
+    --card-color: rgb(23, 23, 23);
+  }
+  
+  body#main {
+    background: var(--bg-color);
+    min-height: calc(100vh - 20px);
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    background: rgb(255, 255, 255, 0.1);
+    /*   border: 1px solid rgb( 255, 255, 255, 0.1); */
+    border-radius: 8px;
+    height: 260px;
+    width: 300px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 922px;
+    width: calc(100% -20px);
+  }
+  
+  /* main */
+  
+  .card::before,
+  .card > .card-border {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  
+  .card::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgb(255, 255, 255, 0.06),
+      transparent 40%
+    );
+    z-index: 3;
+    pointer-events: none;
+  }
+  
+  .card > .card-border {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgb(255, 255, 255, 0.3),
+      transparent 40%
+    );
+    z-index: 1;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  #cards:hover > .card > .card-border {
+    opacity: 1;
+  }
+  
+  .card > .card-content {
+    background: var(--card-color);
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border-radius: inherit;
+    margin: 1px;
+    opacity: 2;
+    position: relative;
+    z-index: 2;
+    /* below code is custom made for this buils */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card > .card-content span{
+    font-size: xx-large;
+    color: white;
+  }
+  
