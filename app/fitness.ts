@@ -8,15 +8,15 @@ router.get("/test", function (req: Request, res: Response) {
 })
 
 router.get("/", function (req: Request, res: Response) {
-    res.status(200).render("home",)
+    res.status(200).render("fitness/home", { path: process.env.FITNESS_PATH })
 })
 
 router.get("/about", function (req: Request, res: Response) {
-    res.status(200).render("about",)
+    res.status(200).render("fitness/about", { path: process.env.FITNESS_PATH })
 })
 
 router.get("/contact", function (req: Request, res: Response) {
-    res.status(200).render("contact",)
+    res.status(200).render("fitness/contact", { path: process.env.FITNESS_PATH })
 })
 
 router.post("/", function (req: Request, res: Response) {

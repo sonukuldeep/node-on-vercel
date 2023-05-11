@@ -8,13 +8,13 @@ router.get("/test", function (req, res) {
     res.status(200).send("works");
 });
 router.get("/", function (req, res) {
-    res.status(200).render("home");
+    res.status(200).render("fitness/home", { path: process.env.FITNESS_PATH });
 });
 router.get("/about", function (req, res) {
-    res.status(200).render("about");
+    res.status(200).render("fitness/about", { path: process.env.FITNESS_PATH });
 });
 router.get("/contact", function (req, res) {
-    res.status(200).render("contact");
+    res.status(200).render("fitness/contact", { path: process.env.FITNESS_PATH });
 });
 router.post("/", function (req, res) {
     var _a = req.body, num1 = _a.num1, num2 = _a.num2;
