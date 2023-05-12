@@ -1,0 +1,19 @@
+.animate__animated {
+    opacity: 0;
+}
+
+.animate__animated.d200 {
+    animation-delay: .200s;
+}
+
+.animate__animated.d300 {
+    animation-delay: .300s;
+}
+
+.animate__animated.d400 {
+    animation-delay: .400s;
+}
+
+.animate__animated.d500 {
+    animation-delay: .500s;
+}
