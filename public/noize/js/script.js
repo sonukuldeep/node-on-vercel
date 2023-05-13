@@ -1,6 +1,6 @@
 
 ANIMATION_CLASS = '.animate__animated'
-ANIMATION_TYPE = 'animate__fadeInUpBig'
+ANIMATION_TYPE = 'animate__fadeInUp'
 const cards = document.querySelectorAll(ANIMATION_CLASS)
 const windowHeight = window.innerHeight; // gets viewport height
 
