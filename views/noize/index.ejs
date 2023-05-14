@@ -241,6 +241,7 @@
             <div id="Videos" data-w-id="9e0dc080-75bb-b3ce-ac84-415953358d33" style="opacity: 0;"
                 class="video-tabs-container animate__animated">
                 <div class="tabs-wrapper">
+                    <!-- mobile video layout -->
                     <div class="tabs-content-mobile">
                         <div style="padding-top: 56.17021276595745%;" class="video-1 w-video w-embed">
                             <iframe class="embedly-embed"
@@ -266,9 +267,9 @@
                                 title="ArtMaks Production - Hard Rock Motivation (Background Royalty-Free Music)"></iframe>
                         </div>
                     </div>
-                    <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
-                        class="tabs w-tabs">
-                        <div class="tabs-content w-tab-content">
+                        <div data-current="Tab 1" class="tabs w-tabs" style="position: relative;">
+                        <!-- video main window -->
+                        <div class="tabs-content w-tab-content" style="position: sticky;">
                             <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
                                 <div style="padding-top: 56.17021276595745%;" class="video w-video w-embed">
                                     <iframe class="embedly-embed"
@@ -302,7 +303,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tabs-menu w-tab-menu">
+                        <!-- video sidebar -->
+                        <div class="tabs-menu w-tab-menu" >
                             <a data-w-tab="Tab 1" class="tab-link-tab-1 w-inline-block w-tab-link w--current" href="#">
                                 <img loading="lazy"
                                     src="<%= path %>/images/621dd5a1a3a435aa4cbad097-6230a345eb63932c33cec297_video-3.jpg"

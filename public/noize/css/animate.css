@@ -17,3 +17,15 @@
 .animate__animated.d500 {
     animation-delay: .500s;
 }
+
+
+/* video section layout fix */
+
+div.tabs-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+div.tabs-container .tabs-content-w {
+    width: 100%;
+}
