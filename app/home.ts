@@ -8,7 +8,7 @@ router.get("/test", function (req: Request, res: Response) {
 })
 
 router.get("/", function (req: Request, res: Response) {
-    res.status(200).render("home/index",)
+    res.status(200).render("home/index", { pageUrl: process.env.PAGE_URL })
 })
 
 
