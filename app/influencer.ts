@@ -8,7 +8,9 @@ router.get("/test", function (req: Request, res: Response) {
 });
 
 router.get("/", function (req: Request, res: Response) {
-  res.status(200).render("influencer/index", { path: process.env.INFLUENCER });
+  res
+    .status(200)
+    .render("influencer/index", { path: process.env.INFLUENCER_PATH });
 });
 
 router.post("/", function (req: Request, res: Response) {
