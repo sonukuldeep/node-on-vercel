@@ -1,0 +1,20 @@
+.block-navbar.nav-animation {
+  position: static;
+}
+.block-navbar.nav-animation.activate {
+  transform: translateY(20px);
+}
+.block-navbar.nav-animation.activate::before {
+  background-color: transparent;
+}
+
+.block-navbar.nav-animation::before {
+  content: "";
+  background-color: #fff;
+  width: 100vw;
+  height: 74.4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
