@@ -90,3 +90,11 @@ animatateFrom('.scroll-trigger-7', 100)
 scrollAnimation('.scroll-trigger-8')
 scrollAnimation('.scroll-trigger-9')
 scrollAnimation('.scroll-trigger-10')
+
+
+const navBtn = document.querySelector('.w-nav-button')
+navBtn.addEventListener('click', () => {
+    const navDropdown = document.querySelector('.w-nav-overlay')
+    navDropdown.classList.toggle('enabled')
+    navBtn.classList.toggle('w--open')
+})

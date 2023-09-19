@@ -18,3 +18,15 @@
   left: 0;
   z-index: -1;
 }
+
+/* hamburger */
+.w-nav-overlay {
+  display: block;
+  height: 0;
+  top: 50;
+  transition: all 400ms ease;
+}
+.w-nav-overlay.enabled {
+  height: 100vh;
+  top: 85px;
+}
