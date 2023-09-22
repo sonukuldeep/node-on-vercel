@@ -1,0 +1,55 @@
+@media (width < 768px) {
+  .nav-top {
+    height: 69px;
+    position: relative;
+  }
+  .nav-top::before {
+    content: "";
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .nav-top.activate::before {
+    position: fixed;
+  }
+  .brand.w-nav-brand.w--current.activate {
+    position: fixed;
+    top: 24px;
+  }
+  .nav-menu.w-nav-menu {
+    height: 0;
+    transition: height 200ms ease-in-out;
+  }
+
+  .menu-button.w-nav-button.activate {
+    z-index: 999;
+    position: fixed;
+    top: 14px;
+    transform: translate(0) !important;
+  }
+  .menu-button.w-nav-button > div {
+    transition: transform 200ms ease;
+  }
+
+  .menu-button.w-nav-button.activate .bottom {
+    transform: rotateZ(40deg) translate(-1px, -7px);
+  }
+  .menu-button.w-nav-button.activate .top {
+    transform: rotateZ(-40deg) translate(-1px, 7px);
+  }
+  .nav-menu.w-nav-menu {
+    display: block !important;
+    height: 0px;
+    padding: 0;
+    top: 65px;
+    overflow: hidden;
+  }
+  .nav-menu.w-nav-menu.activate {
+    height: 100vh;
+    z-index: 998 !important;
+    display: block;
+  }
+}

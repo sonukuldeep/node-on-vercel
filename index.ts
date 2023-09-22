@@ -12,6 +12,7 @@ const fitness = require("./app/fitness");
 const noize = require("./app/noize");
 const influencer = require("./app/influencer");
 const dental = require("./app/dental");
+const bloggy = require("./app/bloggy");
 
 // database
 const { createEntry } = require("./lib/prisma");
@@ -45,6 +46,7 @@ app.use("/fitness", fitness);
 app.use("/noize", noize);
 app.use("/influencer", influencer);
 app.use("/dental", dental);
+app.use("/bloggy", bloggy);
 
 app.post(
   "/createNewContact",

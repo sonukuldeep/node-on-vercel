@@ -48,6 +48,7 @@ var fitness = require("./app/fitness");
 var noize = require("./app/noize");
 var influencer = require("./app/influencer");
 var dental = require("./app/dental");
+var bloggy = require("./app/bloggy");
 // database
 var createEntry = require("./lib/prisma").createEntry;
 // use Input validation
@@ -74,6 +75,7 @@ app.use("/fitness", fitness);
 app.use("/noize", noize);
 app.use("/influencer", influencer);
 app.use("/dental", dental);
+app.use("/bloggy", bloggy);
 app.post("/createNewContact", validate(contactSchema), function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, name, currentWeight, goalWeight, email, describeYourGoals;
     return __generator(this, function (_b) {
